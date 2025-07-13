@@ -1,6 +1,6 @@
 'use client';
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Image from 'next/image';
 import DashboardAnalytics from '@/app/dashboard/components/DashboardAnalytics';
 import userIcon from '../../public/dashboard/user-card-icon.png';
@@ -9,6 +9,8 @@ import churnRateIcon from '../../public/dashboard/churn-rate-icon.png';
 import subscriptionCardIcon from '../../public/dashboard/subscription-card-icon.png';
 import DashboardCard from "@/components/ui/dashboard-card";
 import {Order} from "@/app/dashboard/shared/dashboard-types";
+import {useAuth} from "@/app/contexts/AuthContext";
+import { useRouter } from 'next/navigation';
 
 interface Props {
     initialStats: {
@@ -22,6 +24,9 @@ interface Props {
 
 export default function DashboardClient({initialStats, initialOrders}: Props) {
     const [orders] = useState(initialOrders);
+    const { user } = useAuth();
+    const router = useRouter();
+
 
     const stats = [
         {
@@ -53,6 +58,12 @@ export default function DashboardClient({initialStats, initialOrders}: Props) {
             changeColor: 'text-red-600',
         },
     ];
+
+    useEffect(() => {
+        if (user === null) {
+            router.replace('/auth/login');
+        }
+    }, [user, router]);
 
     return (
         <main className="min-h-screen bg-slate-50 p-4">

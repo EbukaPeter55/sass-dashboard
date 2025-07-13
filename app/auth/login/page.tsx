@@ -7,19 +7,25 @@ import facebook from '../../../public/auth/facebook.png';
 import github from '../../../public/auth/github.png';
 import google from '../../../public/auth/google.png';
 import brandLogo from '../../../public/lawpavillion-logo.svg';
-import {useRouter} from 'next/navigation'
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
-
+import {useState} from 'react';
+import {useAuth} from "@/app/contexts/AuthContext";
+import {PasswordInput} from "@/components/ui/password-input";
 
 export default function Login() {
-    const router = useRouter()
+    const {login} = useAuth();
 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleLogin = () => {
-        router.push('/dashboard')
-    }
-
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        await login(email, password);
+        setIsSubmitting(false);
+    };
 
     return (
         <>
@@ -44,7 +50,7 @@ export default function Login() {
                         </p>
                     </div>
 
-                    {/* Social Buttons */}
+                    {/* Social Buttons (These would also need integration with a real OAuth provider) */}
                     <div className="space-y-3">
                         <Button
                             variant="outline"
@@ -99,19 +105,31 @@ export default function Login() {
                         <div className="h-px flex-1 bg-gray-200"/>
                     </div>
 
-                    {/* Email / Password */}
-                    <form className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
-                            <label className="mb-1 block text-sm font-medium">
+                            <label htmlFor="email" className="mb-1 block text-sm font-medium">
                                 Email Address <span className="text-red-500">*</span>
                             </label>
-                            <Input placeholder="Enter your email address" type="email"/>
+                            <Input
+                                id="email"
+                                placeholder="Enter your email address"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
                         </div>
                         <div>
-                            <label className="mb-1 block text-sm font-medium">
+                            <label htmlFor="password" className="mb-1 block text-sm font-medium">
                                 Password <span className="text-red-500">*</span>
                             </label>
-                            <Input placeholder="Enter your password" type="password"/>
+                            <PasswordInput
+                                id="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
                         </div>
                         <div className="flex justify-end">
                             <Link
@@ -123,11 +141,11 @@ export default function Login() {
                         </div>
 
                         <Button
-                            onClick={handleLogin}
-                            type="button"
+                            type="submit"
+                            disabled={isSubmitting}
                             className="w-full bg-[var(--primary-colour)] hover:bg-[#990000] text-white cursor-pointer"
                         >
-                            Login
+                            {isSubmitting ? 'Logging In...' : 'Login'}
                         </Button>
 
                         <p className="text-center text-xs text-gray-500">

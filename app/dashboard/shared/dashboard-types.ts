@@ -10,6 +10,7 @@ export type NavLink = {
   label: string;
   image?: ImagePair;
   icon?: LucideIcon;
+  action?: 'logout';
 };
 
 export type NavDropdown = {

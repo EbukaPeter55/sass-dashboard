@@ -9,6 +9,7 @@ import {navItems} from '@/app/dashboard/shared/dashboard-constant';
 import brandLogo from '../../../public/lawpavillion-logo.svg';
 import {NavDropdown, NavLink} from '@/app/dashboard/shared/dashboard-types';
 import {cn} from "@/lib/utils";
+import {useAuth} from "@/app/contexts/AuthContext";
 
 interface SidebarContentProps {
     isCollapsed: boolean
@@ -17,6 +18,7 @@ interface SidebarContentProps {
 export default function SidebarContent({isCollapsed}: SidebarContentProps) {
     const pathname = usePathname();
     const [open, setOpen] = useState<string | null>(null);
+    const { logout } = useAuth();
 
     const toggle = (lbl: string) => setOpen(prev => (prev === lbl ? null : lbl));
 
@@ -29,7 +31,7 @@ export default function SidebarContent({isCollapsed}: SidebarContentProps) {
                 ? 'bg-[var(--primary-colour)] text-white'
                 : 'text-[#A3A3A3] hover:bg-[var(--primary-colour)] hover:text-white'}`}
         >
-            {item.image ? (
+            {item?.image ? (
                 <div className="relative h-5 w-5 flex-shrink-0">
                     <Image
                         src={item.image.default}
@@ -61,7 +63,23 @@ export default function SidebarContent({isCollapsed}: SidebarContentProps) {
             <nav className="flex-1 overflow-y-auto p-4 space-y-2">
                 {navItems.map((item) => {
                     if ('type' in item) return <hr key={Math.random()} className="my-2 border-gray-300"/>;
-
+                    // Handle logout action specifically
+                    if ('action' in item && item.action === 'logout') {
+                        const logoutItem = item as NavLink; // Cast to NavLink to access label/icon
+                        return (
+                            <button
+                                key={logoutItem.label}
+                                onClick={logout} // <--- Call the logout function here
+                                className={cn(
+                                    `w-full flex items-center gap-2 p-2 rounded text-sm`,
+                                    `text-[#A3A3A3] hover:bg-[var(--primary-colour)] hover:text-white`
+                                )}
+                            >
+                                {logoutItem.icon && <logoutItem.icon className="h-4 w-4 flex-shrink-0" />}
+                                {!isCollapsed && <span>{logoutItem.label}</span>}
+                            </button>
+                        );
+                    }
                     if ('href' in item) return renderLink(item);
 
                     /* dropdown */
@@ -87,7 +105,6 @@ export default function SidebarContent({isCollapsed}: SidebarContentProps) {
                                     openNow ? <ChevronDown className="h-4 w-4"/> : <ChevronRight className="h-4 w-4"/>
                                 )}
                             </button>
-
                             {openNow && (
                                 <div className="ml-6 mt-2 space-y-1">
                                     {dropdown.children.map((c, idx) =>

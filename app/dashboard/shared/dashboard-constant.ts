@@ -8,7 +8,7 @@ export const navItems: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard', image: { default: dashboardIcon, active: dashboardActiveIcon } },
   { href: '/settings', label: 'Settings', icon: Settings },
   { type: 'divider' },
-  { href: '/logout', label: 'Logout', icon: LogOut },
+  { href: '/logout', label: 'Logout', action: 'logout', icon: LogOut },
 ]
 
 export const orderData: Order[] = [
