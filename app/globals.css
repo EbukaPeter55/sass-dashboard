@@ -46,6 +46,8 @@
 :root {
   --primary-colour: #FF6F1D;
   --secondary-colour: #19171C;
+  --analytics-primary: #FF6F1D;
+  --analytics-secondary: #19171C;
 
 
   --radius: 0.625rem;
