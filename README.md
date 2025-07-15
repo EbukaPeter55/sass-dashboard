@@ -22,6 +22,13 @@ This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with
 
 ---
 
+## Environment Variables
+
+This project requires certain environment variables to function correctly, especially for data fetching.
+
+1.  **Create a `.env.local` file** in the root of your project.
+2.  **Copy the contents of `.env.example`** into your new `.env.local` file.
+
 ## 📦 Installation
 
 Install dependencies using [pnpm](https://pnpm.io):
