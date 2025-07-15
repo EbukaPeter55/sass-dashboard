@@ -72,3 +72,8 @@ export interface FullDashboardData {
 
 export type DashboardStats = KpiCardData;
 
+export type Country = {
+    label: string
+    value: string
+    flag: string
+}

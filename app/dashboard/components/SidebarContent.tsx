@@ -18,7 +18,7 @@ interface SidebarContentProps {
 export default function SidebarContent({isCollapsed}: SidebarContentProps) {
     const pathname = usePathname();
     const [open, setOpen] = useState<string | null>(null);
-    const { logout } = useAuth();
+    const {logout} = useAuth();
 
     const toggle = (lbl: string) => setOpen(prev => (prev === lbl ? null : lbl));
 
@@ -62,20 +62,21 @@ export default function SidebarContent({isCollapsed}: SidebarContentProps) {
 
             <nav className="flex-1 overflow-y-auto p-4 space-y-2">
                 {navItems.map((item) => {
-                    if ('type' in item) return <hr key={Math.random()} className="my-2 border-gray-300 dark:border-gray-700"/>;
-                    // Handle logout action specifically
+                    if ('type' in item) return <hr key={Math.random()}
+                                                   className="my-2 border-gray-300 dark:border-gray-700"/>;
                     if ('action' in item && item.action === 'logout') {
-                        const logoutItem = item as NavLink; // Cast to NavLink to access label/icon
+                        const logoutItem = item as NavLink;
                         return (
                             <button
                                 key={logoutItem.label}
-                                onClick={logout} // <--- Call the logout function here
+                                onClick={logout}
                                 className={cn(
                                     `w-full flex items-center gap-2 p-2 rounded text-sm`,
                                     `text-[#A3A3A3] hover:bg-[var(--primary-colour)] hover:text-white dark:text-gray-400 dark:hover:bg-[var(--primary-colour)] dark:hover:text-white`
                                 )}
                             >
-                                {logoutItem.icon && <logoutItem.icon className="h-4 w-4 flex-shrink-0 dark:text-gray-400" />}
+                                {logoutItem.icon &&
+                                    <logoutItem.icon className="h-4 w-4 flex-shrink-0 dark:text-gray-400"/>}
                                 {!isCollapsed && <span>{logoutItem.label}</span>}
                             </button>
                         );
@@ -102,7 +103,8 @@ export default function SidebarContent({isCollapsed}: SidebarContentProps) {
                     {!isCollapsed && dropdown.label}
                 </span>
                                 {!isCollapsed && (
-                                    openNow ? <ChevronDown className="h-4 w-4"/> : <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400"/>
+                                    openNow ? <ChevronDown className="h-4 w-4"/> :
+                                        <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400"/>
                                 )}
                             </button>
                             {openNow && (

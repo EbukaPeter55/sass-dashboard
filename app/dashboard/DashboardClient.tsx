@@ -11,8 +11,6 @@ import DashboardCard from "@/components/ui/dashboard-card";
 import {Order, DashboardStats, FormattedAnalyticsDataForComponent} from "@/app/dashboard/shared/dashboard-types";
 import {useAuth} from "@/app/contexts/AuthContext";
 import {useRouter} from 'next/navigation';
-import {orderColumns} from "@/components/ui/table/column";
-import {DataTable} from "@/components/ui/table/table";
 
 
 interface Props {
@@ -59,7 +57,7 @@ export default function DashboardClient({initialStats, initialOrders, initialAna
 
     useEffect(() => {
         if (user === null) {
-            router.replace('/login');
+            router.replace('/auth/login');
         }
     }, [user, router]);
 
