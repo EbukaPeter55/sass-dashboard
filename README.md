@@ -7,6 +7,7 @@ This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with
 - Authentication (Login and Signup)
 - Modern Dashboard
 - Settings page for Theme selection and Profile update
+- Server Side Rendering for data fetching
 
 
 ## 🚀 Tech Stack
@@ -19,6 +20,7 @@ This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with
 - **ShadCN UI**  
 - **Jest** (Unit Testing)  
 - **React Testing Library**
+- **Context API**
 
 ---
 
