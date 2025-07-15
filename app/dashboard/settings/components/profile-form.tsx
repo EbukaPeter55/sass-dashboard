@@ -133,8 +133,20 @@ export function ProfileForm() {
                                 </FormItem>
                             )}
                         />
-                        <Button className="bg-[var(--primary-colour)] hover:bg-[var(--primary-colour)] cursor-pointer"
-                                type="submit">Update profile</Button>
+                        <Button
+                            className="
+                                bg-[var(--primary-colour)]
+                                hover:bg-[var(--primary-colour)]
+                                cursor-pointer
+                                text-white
+                                dark:bg-primary
+                                dark:text-primary-foreground
+                                dark:hover:bg-primary/90
+                            "
+                            type="submit"
+                        >
+                            Update profile
+                        </Button>
                     </form>
                 </Form>
             </CardContent>

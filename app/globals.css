@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,6 +122,17 @@
 }
 
 @layer base {
+  :root {
+    --background: 0 0% 100%; /* Light mode background */
+    --foreground: 222.2 84% 4.9%; /* Light mode foreground */
+    /* ... other light mode variables */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%; /* Dark mode background */
+    --foreground: 210 20% 98%; /* Dark mode foreground */
+    /* ... other dark mode variables */
+  }
   * {
     @apply border-border outline-ring/50;
   }

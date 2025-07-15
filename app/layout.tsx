@@ -28,7 +28,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50 text-slate-900 dark:bg-gray-900 dark:text-gray-100`}
+            className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground dark:bg-gray-950 dark:text-gray-50`}
         >
         <ThemeProvider
             attribute="class" // This adds 'dark' or 'light' class to the html tag

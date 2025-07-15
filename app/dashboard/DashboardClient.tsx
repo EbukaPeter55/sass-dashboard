@@ -91,19 +91,6 @@ export default function DashboardClient({initialStats, initialOrders, initialAna
                     arpu: initialStats.arpu,
                 }}
             />
-
-            <div className="mt-8">
-                <DataTable<Order, unknown>
-                    columns={orderColumns}
-                    data={orders}
-                    hasTableTitle={true}
-                    tableTitle="Latest Orders"
-                    pagination={true}
-                    emptyTitle="No Orders Found"
-                    emptyDescription="There are no recent orders to display."
-                    showUpAndDownArrows={true}
-                />
-            </div>
         </main>
     );
 }

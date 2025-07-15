@@ -19,7 +19,7 @@ export default async function MainContent() {
 
     return (
         <Suspense fallback={<div className="p-4 bg-slate-50 dark:bg-gray-900">Loading dashboard…</div>}>
-            <div className="min-h-screen bg-slate-50 p-4 dark:bg-gray-900">
+            <div className="min-h-screen bg-background p-4 dark:bg-gray-900">
             <DashboardClient
                 initialStats={initialStats}
                 initialOrders={initialOrders}
