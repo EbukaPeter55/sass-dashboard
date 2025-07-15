@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lawpavillion Dashboard
 
-## Getting Started
+This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). It uses the **App Router** and integrates a modern tech stack for a responsive and maintainable frontend.
 
-First, run the development server:
+---
+## 🚀 Features
+- Authentication (Login and Signup)
+- Modern Dashboard
+- Settings page for Theme selection and Profile update
+
+
+## 🚀 Tech Stack
+
+- **Node.js** v22  
+- **React** v19  
+- **Next.js** v15.3.5 (App Router)  
+- **TypeScript**  
+- **Tailwind CSS**  
+- **ShadCN UI**  
+- **Jest** (Unit Testing)  
+- **React Testing Library**
+
+---
+
+## 📦 Installation
+
+Install dependencies using [pnpm](https://pnpm.io):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+
+To start the development server, run:
+```bash
 pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open your browser at: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🧪 Running Unit Tests
+Prerequisite
+Create a .watchmanconfig file in the root of your project and add an empty object:
+{}
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## **Run tests**
+Use this command: pnpm test
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
