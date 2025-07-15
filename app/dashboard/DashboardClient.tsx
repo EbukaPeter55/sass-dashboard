@@ -27,7 +27,7 @@ export default function DashboardClient({initialStats, initialOrders, initialAna
     const stats = [
         {
             icon: <Image src={userIcon} alt="New Users" width={16} height={16}/>,
-            title: 'New Users',
+            title: 'Monthly Users',
             value: initialStats.newUsers,
             change: '+11.2%',
             changeColor: 'text-green-600',
