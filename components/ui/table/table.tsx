@@ -12,7 +12,6 @@ import {
 import {useState} from 'react';
 import {Button} from '../button';
 import {ArrowUpDown} from 'lucide-react';
-import {cn} from '@metallicjs/ui/lib/utils';
 import {
     Select,
     SelectContent,
@@ -20,6 +19,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from '../select';
+import {cn} from "@/lib/utils";
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
