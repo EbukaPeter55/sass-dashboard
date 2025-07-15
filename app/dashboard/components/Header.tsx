@@ -50,7 +50,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
 
       <div className="flex items-center gap-6">
         <div className="relative cursor-pointer" ref={notificationRef}>
-          <Bell className="h-5 w-5 text-slate-800" onClick={toggleNotifications} />
+          <Bell className="h-5 w-5 text-slate-800" data-testid="notification-bell" onClick={toggleNotifications} />
           <span className="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white" />
           {/* Notification Dropdown */}
           <div ref={dropdownRef}>

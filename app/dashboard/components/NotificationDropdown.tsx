@@ -84,7 +84,7 @@ export default function NotificationDropdown({ isOpen, onClose }: NotificationDr
   if (!isOpen) return null;
 
   return (
-    <div
+    <div data-testid="notification-dropdown"
       className={cn(
         'absolute right-0 mt-2 w-80 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none',
         'flex flex-col overflow-hidden',

@@ -31,7 +31,9 @@
     "node_modules/.pnpm/@types+jest@30.0.0/node_modules/@types/jest/index.d.ts",
     "src",
     "**/*.test.ts",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "**/__tests__/**/*.ts",
+    "**/__tests__/**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }
