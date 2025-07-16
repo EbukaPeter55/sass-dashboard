@@ -1,6 +1,6 @@
 'use client';
 
-import {useState, useEffect} from 'react';
+import {useEffect} from 'react';
 import Image from 'next/image';
 import DashboardAnalytics from '@/app/dashboard/components/DashboardAnalytics';
 import userIcon from '../../public/dashboard/user-card-icon.png';
@@ -19,7 +19,7 @@ interface Props {
     initialAnalyticsData: FormattedAnalyticsDataForComponent;
 }
 
-export default function DashboardClient({initialStats, initialOrders, initialAnalyticsData}: Props) {
+export default function DashboardClient({initialStats, initialAnalyticsData}: Props) {
     const {user} = useAuth();
     const router = useRouter();
 
