@@ -2,7 +2,10 @@
 
 This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). It uses the **App Router** and integrates a modern tech stack for a responsive and maintainable frontend.
 
----
+## Deployed Live URL:
+**https://sass-dashboard-cg24lkzz2-ebuka-peters-projects.vercel.app
+
+**---
 ## 🚀 Features
 - Authentication (Login and Signup)
 - Modern Dashboard
