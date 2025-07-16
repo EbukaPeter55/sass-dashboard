@@ -25,6 +25,8 @@ This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with
 - **React Testing Library**
 - **Context API**
 
+  I made use of the context API for state management as against using zustand or redux, cause the app does not really require a complex state change and management which zustand and redux are more suitable for. Moreover, Context API has less boiler plate code when compared to redux.
+
 ---
 
 ## Environment Variables
