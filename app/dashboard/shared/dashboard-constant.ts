@@ -1,7 +1,7 @@
 import {Settings, LogOut} from 'lucide-react';
 import dashboardIcon from '../../../public/dashboard/dashboard.png'
 import dashboardActiveIcon from '../../../public/dashboard/dashboard-active.png';
-import {Country, FullDashboardData, NavItem} from '@/app/dashboard/shared/dashboard-types';
+import {Country, FullDashboardData, NavItem, Notification} from '@/app/dashboard/shared/dashboard-types';
 
 
 export const navItems: NavItem[] = [
@@ -182,3 +182,54 @@ export const MOCK_FULL_DASHBOARD_DATA: FullDashboardData = {
         }
     ]
 };
+
+export const dummyNotifications: Notification[] = [
+    {
+        id: '1',
+        message: 'This is a notification that hasn\'t been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: false,
+    },
+    {
+        id: '2',
+        message: 'This is a notification that has been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: true,
+    },
+    {
+        id: '3',
+        message: 'This is a notification that hasn\'t been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: false,
+    },
+    {
+        id: '4',
+        message: 'This is a notification that has been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: true,
+    },
+    {
+        id: '5',
+        message: 'This is a notification that hasn\'t been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: false,
+    },
+    {
+        id: '6',
+        message: 'This is a notification that has been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: true,
+    },
+    {
+        id: '7',
+        message: 'This is a notification that hasn\'t been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: false,
+    },
+    {
+        id: '8',
+        message: 'This is a notification that has been read for you to look at. We would need to define what will be displayed here.',
+        time: '07:12',
+        read: true,
+    },
+];

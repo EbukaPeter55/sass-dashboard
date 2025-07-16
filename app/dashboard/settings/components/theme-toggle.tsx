@@ -36,7 +36,7 @@ export function ThemeToggle() {
             <CardHeader>
                 <CardTitle>Theme Settings</CardTitle>
                 <CardDescription>
-                    Customize your dashboard's appearance.
+                    Customize your dashboard&apos;s appearance.
                 </CardDescription>
             </CardHeader>
             <CardContent>

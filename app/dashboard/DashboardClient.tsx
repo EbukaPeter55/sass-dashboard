@@ -20,7 +20,6 @@ interface Props {
 }
 
 export default function DashboardClient({initialStats, initialOrders, initialAnalyticsData}: Props) {
-    const [orders] = useState(initialOrders);
     const {user} = useAuth();
     const router = useRouter();
 

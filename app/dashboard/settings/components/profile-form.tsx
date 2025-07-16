@@ -85,7 +85,7 @@ export function ProfileForm() {
             <CardHeader>
                 <CardTitle>Profile</CardTitle>
                 <CardDescription>
-                    Update your account's profile information.
+                    Update your account&apos;s profile information.
                 </CardDescription>
             </CardHeader>
             <CardContent>
@@ -127,7 +127,7 @@ export function ProfileForm() {
                                         <PasswordInput placeholder="Leave blank to keep current" {...field} />
                                     </FormControl>
                                     <FormDescription>
-                                        Leave blank if you don't want to change your password.
+                                        Leave blank if you don&apos;t want to change your password.
                                     </FormDescription>
                                     <FormMessage/>
                                 </FormItem>

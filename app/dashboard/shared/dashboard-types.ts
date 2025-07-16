@@ -77,3 +77,10 @@ export type Country = {
     value: string
     flag: string
 }
+
+export interface Notification {
+    id: string;
+    message: string;
+    time: string;
+    read: boolean;
+}

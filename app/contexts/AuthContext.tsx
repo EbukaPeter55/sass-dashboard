@@ -26,21 +26,17 @@ interface AuthContextType {
     isLoading: boolean;
 }
 
-// Create the AuthContext
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Helper to get users from localStorage
 const getMockUsers = (): User[] => {
     const usersJson = localStorage.getItem('mockUsers');
     return usersJson ? JSON.parse(usersJson) : [];
 };
 
-// Helper to save users to localStorage
 const saveMockUsers = (users: User[]) => {
     localStorage.setItem('mockUsers', JSON.stringify(users));
 };
 
-// AuthProvider component
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({children}) => {
     const [user, setUser] = useState<User | null>(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -55,17 +51,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({children}) => {
                 setUser(storedUser);
             } catch (error) {
                 console.error("Failed to parse currentUser from localStorage:", error);
-                localStorage.removeItem('currentUser'); // Clear invalid data
+                localStorage.removeItem('currentUser');
             }
         }
-        setIsLoading(false); // Finished initial session check
+        setIsLoading(false);
     }, []);
 
     const signup = useCallback(async (fullName: string, email: string, password: string): Promise<boolean> => {
         setIsLoading(true);
         return new Promise((resolve) => {
             setTimeout(() => {
-                let users = getMockUsers();
+                const users = getMockUsers();
                 if (users.some(u => u.email === email)) {
                     toast.error("User with this email already exists.");
                     setIsLoading(false);
@@ -74,10 +70,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({children}) => {
                 }
 
                 const newUser: User = {
-                    id: String(Date.now()), // Simple unique ID
+                    id: String(Date.now()),
                     fullName,
                     email,
-                    password, // Storing password for mock purposes.
+                    password,
                 };
                 users.push(newUser);
                 saveMockUsers(users);
