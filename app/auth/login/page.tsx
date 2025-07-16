@@ -135,7 +135,7 @@ export default function Login() {
                                 id="password"
                                 placeholder="Enter your password"
                                 value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                                 required
                                 className="dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600 focus:dark:border-red-500"
                             />
