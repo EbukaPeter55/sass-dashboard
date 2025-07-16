@@ -97,7 +97,7 @@ export default function SignupPage() {
                             value={password}
                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                             required
-                            className="dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600 focus:dark:border-red-500" // PasswordInput field
+                            className="dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600 focus:dark:border-red-500"
                         />
                     </div>
                     <div className="flex justify-end">
