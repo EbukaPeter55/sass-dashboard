@@ -7,6 +7,7 @@ This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with
 - Authentication (Login and Signup)
 - Modern Dashboard
 - Settings page for Theme selection and Profile update
+- Server Side Rendering for data fetching
 
 
 ## 🚀 Tech Stack
@@ -19,8 +20,16 @@ This is a Sass dashboard [Next.js](https://nextjs.org) project bootstrapped with
 - **ShadCN UI**  
 - **Jest** (Unit Testing)  
 - **React Testing Library**
+- **Context API**
 
 ---
+
+## Environment Variables
+
+This project requires certain environment variables to function correctly, especially for data fetching.
+
+1.  **Create a `.env.local` file** in the root of your project.
+2.  **Copy the contents of `.env.example`** into your new `.env.local` file.
 
 ## 📦 Installation
 
